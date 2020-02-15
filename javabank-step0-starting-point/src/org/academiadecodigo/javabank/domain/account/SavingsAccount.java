@@ -3,10 +3,10 @@ package org.academiadecodigo.javabank.domain.account;
 /**
  * A savings account domain entity which requires a minimum balance
  * and can only be used for transferring money, not for debiting
- * @see Account
+ * @see AbstractAccount
  * @see AccountType#SAVINGS
  */
-public class SavingsAccount extends Account {
+public class SavingsAccount extends AbstractAccount {
 
     /**
      * The minimum balance to maintain on the account
@@ -16,14 +16,14 @@ public class SavingsAccount extends Account {
     /**
      * Creates a new {@code SavingsAccount} instance
      *
-     * @see Account#Account(int)
+     * @see AbstractAccount#AbstractAccount(int)
      */
     public SavingsAccount(int id) {
         super(id);
     }
 
     /**
-     * @see Account#getAccountType()
+     * @see AbstractAccount#getAccountType()
      */
     @Override
     public AccountType getAccountType() {
@@ -34,7 +34,7 @@ public class SavingsAccount extends Account {
      * Checks if the account can be debited without going below the minimum balance
      *
      * @see SavingsAccount#MIN_BALANCE
-     * @see Account#canDebit(double)
+     * @see AbstractAccount#canDebit(double)
      */
     @Override
     public boolean canDebit(double amount) {
@@ -42,7 +42,7 @@ public class SavingsAccount extends Account {
     }
 
     /**
-     * @see Account#canWithdraw()
+     * @see AbstractAccount#canWithdraw()
      */
     @Override
     public boolean canWithdraw() {

@@ -1,9 +1,6 @@
 package org.academiadecodigo.javabank.managers;
 
-import org.academiadecodigo.javabank.domain.account.Account;
-import org.academiadecodigo.javabank.domain.account.AccountType;
-import org.academiadecodigo.javabank.domain.account.CheckingAccount;
-import org.academiadecodigo.javabank.domain.account.SavingsAccount;
+import org.academiadecodigo.javabank.domain.account.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,7 +43,7 @@ public class AccountManager {
     }
 
     /**
-     * Perform an {@link Account} deposit if possible
+     * Perform an {@link AbstractAccount} deposit if possible
      *
      * @param id     the id of the account
      * @param amount the amount to deposit
@@ -56,7 +53,7 @@ public class AccountManager {
     }
 
     /**
-     * Perform an {@link Account} withdrawal if possible
+     * Perform an {@link AbstractAccount} withdrawal if possible
      *
      * @param id     the id of the account
      * @param amount the amount to withdraw
@@ -73,7 +70,7 @@ public class AccountManager {
     }
 
     /**
-     * Performs a transfer between two {@link Account} if possible
+     * Performs a transfer between two {@link AbstractAccount} if possible
      *
      * @param srcId  the source account id
      * @param dstId  the destination account id

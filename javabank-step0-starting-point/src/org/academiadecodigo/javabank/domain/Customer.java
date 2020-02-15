@@ -1,5 +1,6 @@
 package org.academiadecodigo.javabank.domain;
 
+import org.academiadecodigo.javabank.domain.account.AbstractAccount;
 import org.academiadecodigo.javabank.domain.account.Account;
 import org.academiadecodigo.javabank.domain.account.AccountType;
 import org.academiadecodigo.javabank.managers.AccountManager;
@@ -12,8 +13,25 @@ import java.util.Map;
  */
 public class Customer {
 
+    private int id;
+    private String name;
+
     private AccountManager accountManager;
     private Map<Integer, Account> accounts = new HashMap<>();
+
+    public Customer (int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
 
     /**
      * Sets the account manager
@@ -38,7 +56,7 @@ public class Customer {
     }
 
     /**
-     * Gets the balance of an {@link Account}
+     * Gets the balance of an {@link AbstractAccount}
      *
      * @param id the id of the account
      * @return the account balance

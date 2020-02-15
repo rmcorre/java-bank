@@ -2,22 +2,22 @@ package org.academiadecodigo.javabank.domain.account;
 
 /**
  * A checking account with no restrictions
- * @see Account
+ * @see AbstractAccount
  * @see AccountType#CHECKING
  */
-public class CheckingAccount extends Account {
+public class CheckingAccount extends AbstractAccount {
 
     /**
      * Creates a new {@code CheckingAccount} instance
      *
-     * @see Account#Account(int)
+     * @see AbstractAccount#AbstractAccount(int)
      */
     public CheckingAccount(int id) {
         super(id);
     }
 
     /**
-     * @see Account#getAccountType()
+     * @see AbstractAccount#getAccountType()
      */
     @Override
     public AccountType getAccountType() {

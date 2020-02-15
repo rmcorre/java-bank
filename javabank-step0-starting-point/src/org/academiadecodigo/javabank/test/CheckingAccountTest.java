@@ -1,13 +1,13 @@
 package org.academiadecodigo.javabank.test;
 
-import org.academiadecodigo.javabank.domain.account.Account;
+import org.academiadecodigo.javabank.domain.account.AbstractAccount;
 import org.academiadecodigo.javabank.domain.account.CheckingAccount;
 
 public class CheckingAccountTest {
 
     public boolean test() {
 
-        Account account = new CheckingAccount(1);
+        AbstractAccount account = new CheckingAccount(1);
 
         // account should start with zero money
         if (account.getBalance() != 0) {

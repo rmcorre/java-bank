@@ -17,8 +17,8 @@ public class BankTest {
             return false;
         }
 
-        Customer c1 = new Customer();
-        Customer c2 = new Customer();
+        Customer c1 = new Customer(1, "Rui");
+        Customer c2 = new Customer(2, "Horacio");
         bank.addCustomer(c1);
         bank.addCustomer(c2);
 
