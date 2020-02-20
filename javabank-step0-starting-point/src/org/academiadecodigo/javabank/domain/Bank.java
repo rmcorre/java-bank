@@ -4,6 +4,7 @@ import org.academiadecodigo.javabank.managers.AccountManager;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * The bank entity
@@ -20,6 +21,18 @@ public class Bank {
      */
     public Bank(AccountManager accountManager) {
         this.accountManager = accountManager;
+    }
+
+    public AccountManager getAccountManager() {
+        return accountManager;
+    }
+
+    public Customer getCustomer(int id) {
+        return customers.get(id);
+    }
+
+    public Set<Integer> getCustomerIds() {
+        return customers.keySet();
     }
 
     /**

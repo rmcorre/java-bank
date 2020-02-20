@@ -6,7 +6,9 @@ import org.academiadecodigo.javabank.domain.account.AccountType;
 import org.academiadecodigo.javabank.managers.AccountManager;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * The customer domain entity
@@ -32,6 +34,13 @@ public class Customer {
         return name;
     }
 
+    public Set<Account> getAccounts() {
+        return new HashSet<>(accounts.values());
+    }
+
+    public Set<Integer> getAccountIds() {
+        return new HashSet<>(accounts.keySet());
+    }
 
     /**
      * Sets the account manager
