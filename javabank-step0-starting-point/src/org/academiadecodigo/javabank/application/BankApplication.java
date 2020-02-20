@@ -49,7 +49,7 @@ public class BankApplication {
         menuLoop();
     }
 
-    public void menuLoop () {
+    private void menuLoop () {
 
         int userChoice = prompt.getUserInput(mainMenu);
 
@@ -62,7 +62,7 @@ public class BankApplication {
 
     }
 
-    public int scanAccessingCustomerId() {
+    private int scanAccessingCustomerId() {
 
         IntegerSetInputScanner scanAccessingCustomerId = new IntegerSetInputScanner(bank.getCustomerIds());
         scanAccessingCustomerId.setMessage(Text.INSERT_CUSTOMER_ID);
@@ -71,7 +71,7 @@ public class BankApplication {
         return prompt.getUserInput(scanAccessingCustomerId);
     }
 
-    public MenuInputScanner buildScanMainMenu() {
+    private MenuInputScanner buildScanMainMenu() {
 
         MenuInputScanner mainMenu = new MenuInputScanner(UserOptions.getMessages());
         mainMenu.setMessage(Text.MENU_WELCOME);
@@ -80,7 +80,7 @@ public class BankApplication {
         return mainMenu;
     }
 
-    public Map<Integer, Operation> buildOperationsMap() {
+    private Map<Integer, Operation> buildOperationsMap() {
 
         Map<Integer, Operation> map = new HashMap<>();
         map.put(UserOptions.GET_BALANCE.getOption(), new CustomerBalanceOperation(this));

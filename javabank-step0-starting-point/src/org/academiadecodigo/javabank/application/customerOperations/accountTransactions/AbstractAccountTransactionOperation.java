@@ -11,7 +11,7 @@ import org.academiadecodigo.javabank.managers.AccountManager;
 public abstract class AbstractAccountTransactionOperation extends AbstractCustomerOperation {
 
     protected AccountManager accountManager;
-    protected Prompt prompt;
+    private Prompt prompt;
 
     public AbstractAccountTransactionOperation(BankApplication bankApplication) {
         super(bankApplication);
