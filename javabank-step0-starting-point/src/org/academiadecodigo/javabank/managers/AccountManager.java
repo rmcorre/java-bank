@@ -1,6 +1,7 @@
 package org.academiadecodigo.javabank.managers;
 
 import org.academiadecodigo.javabank.domain.account.*;
+import org.academiadecodigo.javabank.factories.AccountFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +11,7 @@ import java.util.Map;
  */
 public class AccountManager {
 
-    private static int numberAccounts = 0;
+    private AccountFactory accountFactory = new AccountFactory();
     private Map<Integer, Account> accountMap;
 
     /**
@@ -28,16 +29,7 @@ public class AccountManager {
      */
     public Account openAccount(AccountType accountType) {
 
-        Account newAccount;
-        numberAccounts++;
-
-        if (accountType == AccountType.CHECKING) {
-            newAccount = new CheckingAccount(numberAccounts);
-
-        } else {
-            newAccount = new SavingsAccount(numberAccounts);
-        }
-
+        Account newAccount = accountFactory.createAccount(accountType);
         accountMap.put(newAccount.getId(), newAccount);
         return newAccount;
     }
