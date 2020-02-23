@@ -13,6 +13,7 @@ public class Bank {
 
     private AccountManager accountManager;
     private Map<Integer, Customer> customers = new HashMap<>();
+    private int loginCustomer;
 
     /**
      * Creates a new instance of Bank and initializes it with the given account manager
@@ -27,8 +28,12 @@ public class Bank {
         return accountManager;
     }
 
-    public Customer getCustomer(int id) {
-        return customers.get(id);
+    public Customer getLoginCustomer() {
+        return customers.get(loginCustomer);
+    }
+
+    public void setLoginCustomer(int id) {
+        this.loginCustomer = id;
     }
 
     public Set<Integer> getCustomerIds() {

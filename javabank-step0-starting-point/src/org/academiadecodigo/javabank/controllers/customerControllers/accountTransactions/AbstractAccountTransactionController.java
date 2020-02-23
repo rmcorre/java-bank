@@ -1,26 +1,26 @@
-package org.academiadecodigo.javabank.application.customerOperations.accountTransactions;
+package org.academiadecodigo.javabank.controllers.customerControllers.accountTransactions;
 
 import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.bootcamp.scanners.integer.IntegerSetInputScanner;
 import org.academiadecodigo.bootcamp.scanners.precisiondouble.DoubleInputScanner;
-import org.academiadecodigo.javabank.application.BankApplication;
-import org.academiadecodigo.javabank.application.Text;
-import org.academiadecodigo.javabank.application.customerOperations.AbstractCustomerOperation;
+import org.academiadecodigo.javabank.controllers.BankApplication;
+import org.academiadecodigo.javabank.views.Text;
+import org.academiadecodigo.javabank.controllers.customerControllers.AbstractCustomerController;
 import org.academiadecodigo.javabank.managers.AccountManager;
 
-public abstract class AbstractAccountTransactionOperation extends AbstractCustomerOperation {
+public abstract class AbstractAccountTransactionController extends AbstractCustomerController {
 
     protected AccountManager accountManager;
     private Prompt prompt;
 
-    public AbstractAccountTransactionOperation(BankApplication bankApplication) {
+    public AbstractAccountTransactionController(BankApplication bankApplication) {
         super(bankApplication);
         this.accountManager = bankApplication.getBank().getAccountManager();
         this.prompt = bankApplication.getPrompt();
     }
 
     @Override
-    public void execute() {
+    public void init() {
 
         if (!hasAccounts()) {
             System.out.println(Text.ERROR_NO_ACCOUNT);

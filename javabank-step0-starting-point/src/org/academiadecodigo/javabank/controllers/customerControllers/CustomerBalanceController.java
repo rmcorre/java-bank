@@ -1,22 +1,22 @@
-package org.academiadecodigo.javabank.application.customerOperations;
+package org.academiadecodigo.javabank.controllers.customerControllers;
 
-import org.academiadecodigo.javabank.application.BankApplication;
-import org.academiadecodigo.javabank.application.Text;
+import org.academiadecodigo.javabank.controllers.BankApplication;
+import org.academiadecodigo.javabank.views.Text;
 import org.academiadecodigo.javabank.domain.account.Account;
 
 import java.text.DecimalFormat;
 import java.util.Set;
 
-public class CustomerBalanceOperation extends AbstractCustomerOperation {
+public class CustomerBalanceController extends AbstractCustomerController {
 
     private DecimalFormat df = new DecimalFormat("#.##");
 
-    public CustomerBalanceOperation(BankApplication bankApplication) {
+    public CustomerBalanceController(BankApplication bankApplication) {
         super(bankApplication);
     }
 
     @Override
-    public void execute() {
+    public void init() {
 
 
         System.out.println("\n" + customer.getName() + Text.BALANCE_MESSAGE + "\n");
