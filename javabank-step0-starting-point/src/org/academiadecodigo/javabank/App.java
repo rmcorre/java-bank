@@ -1,24 +1,23 @@
 package org.academiadecodigo.javabank;
 
-import org.academiadecodigo.javabank.controllers.BankApplication;
+import org.academiadecodigo.javabank.controllers.LoginController;
 import org.academiadecodigo.javabank.domain.Bank;
-import org.academiadecodigo.javabank.domain.Customer;
-import org.academiadecodigo.javabank.managers.AccountManager;
 
 public class App {
 
+    private Bank bank;
+
     public static void main(String[] args) {
 
-        AccountManager accountManager = new AccountManager();
-        Bank bank = new Bank(accountManager);
-        BankApplication bankApplication = new BankApplication(bank);
+        App app = new App();
+        app.bootstrap();
+    }
 
-        Customer c1 = new Customer(1, "Rui");
-        Customer c2 = new Customer(2, "Horacio");
+    private void bootstrap() {
+        Bootstrap bootstrap = new Bootstrap();
+        bank = bootstrap.generateTestData();
 
-        bank.addCustomer(c1);
-        bank.addCustomer(c2);
-
-        bankApplication.start();
+        LoginController loginController = bootstrap.wireObjects(bank);
+        loginController.init();
     }
 }

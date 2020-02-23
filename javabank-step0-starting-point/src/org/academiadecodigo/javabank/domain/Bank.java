@@ -12,20 +12,22 @@ import java.util.Set;
 public class Bank {
 
     private AccountManager accountManager;
-    private Map<Integer, Customer> customers = new HashMap<>();
+    private Map<Integer, Customer> customers;
     private int loginCustomer;
 
     /**
      * Creates a new instance of Bank and initializes it with the given account manager
-     *
-     * @param accountManager the account manager
      */
-    public Bank(AccountManager accountManager) {
-        this.accountManager = accountManager;
+    public Bank() {
+        this.customers = new HashMap<>();
     }
 
     public AccountManager getAccountManager() {
         return accountManager;
+    }
+
+    public void setAccountManager(AccountManager accountManager) {
+        this.accountManager = accountManager;
     }
 
     public Customer getLoginCustomer() {

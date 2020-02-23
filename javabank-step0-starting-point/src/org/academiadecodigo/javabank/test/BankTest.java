@@ -10,7 +10,7 @@ public class BankTest {
     public boolean test() {
 
         AccountManager accountManager = new AccountManager();
-        Bank bank = new Bank(accountManager);
+        Bank bank = new Bank();
 
         // bank initial balance should be 0
         if (bank.getBalance() != 0) {

@@ -1,17 +1,19 @@
 package org.academiadecodigo.javabank.controllers.customerControllers;
 
-import org.academiadecodigo.javabank.controllers.BankApplication;
 import org.academiadecodigo.javabank.controllers.Controller;
-import org.academiadecodigo.javabank.domain.Customer;
+import org.academiadecodigo.javabank.views.View;
 
 public abstract class AbstractCustomerController implements Controller {
 
-    protected BankApplication bankApplication;
-    protected Customer customer;
+    protected View view;
 
-    public AbstractCustomerController(BankApplication bankApplication) {
-        this.bankApplication = bankApplication;
-        this.customer = bankApplication.getBank().getCustomer(bankApplication.getAccessingCustomerId());
+    public void setView(View view) {
+        this.view = view;
+    }
+
+    @Override
+    public void init() {
+        view.show();
     }
 
 }
