@@ -2,9 +2,9 @@ package org.academiadecodigo.javabank.controllers.customerControllers.accountTra
 
 import org.academiadecodigo.javabank.controllers.BankApplication;
 
-public class CustomerDepositController extends AbstractAccountTransactionController {
+public class WithdrawController extends AbstractAccountTransactionController {
 
-//    public CustomerDepositController(BankApplication bankApplication) {
+//    public CustomerWithdrawController(BankApplication bankApplication) {
 //        super(bankApplication);
 //    }
 //
@@ -21,7 +21,7 @@ public class CustomerDepositController extends AbstractAccountTransactionControl
 //        Double amount = scanAmount();
 //
 //        if (customer.getAccountIds().contains(accountId)) {
-//            accountManager.deposit(accountId, amount);
+//            accountManager.withdraw(accountId, amount);
 //        }
 //    }
 }

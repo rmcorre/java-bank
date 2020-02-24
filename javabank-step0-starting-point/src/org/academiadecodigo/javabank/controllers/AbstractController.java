@@ -1,9 +1,9 @@
-package org.academiadecodigo.javabank.controllers.customerControllers;
+package org.academiadecodigo.javabank.controllers;
 
 import org.academiadecodigo.javabank.controllers.Controller;
 import org.academiadecodigo.javabank.views.View;
 
-public abstract class AbstractCustomerController implements Controller {
+public abstract class AbstractController implements Controller {
 
     protected View view;
 

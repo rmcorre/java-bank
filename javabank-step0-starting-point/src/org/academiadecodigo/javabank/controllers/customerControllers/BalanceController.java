@@ -1,13 +1,8 @@
 package org.academiadecodigo.javabank.controllers.customerControllers;
 
-import org.academiadecodigo.javabank.controllers.BankApplication;
-import org.academiadecodigo.javabank.views.Text;
-import org.academiadecodigo.javabank.domain.account.Account;
+import org.academiadecodigo.javabank.controllers.AbstractController;
 
-import java.text.DecimalFormat;
-import java.util.Set;
-
-public class CustomerBalanceController extends AbstractCustomerController {
+public class BalanceController extends AbstractController {
 
 //    private DecimalFormat df = new DecimalFormat("#.##");
 //

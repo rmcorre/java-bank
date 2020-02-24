@@ -1,14 +1,8 @@
 package org.academiadecodigo.javabank.controllers.customerControllers.accountTransactions;
 
-import org.academiadecodigo.bootcamp.Prompt;
-import org.academiadecodigo.bootcamp.scanners.integer.IntegerSetInputScanner;
-import org.academiadecodigo.bootcamp.scanners.precisiondouble.DoubleInputScanner;
-import org.academiadecodigo.javabank.controllers.BankApplication;
-import org.academiadecodigo.javabank.views.Text;
-import org.academiadecodigo.javabank.controllers.customerControllers.AbstractCustomerController;
-import org.academiadecodigo.javabank.managers.AccountManager;
+import org.academiadecodigo.javabank.controllers.AbstractController;
 
-public abstract class AbstractAccountTransactionController extends AbstractCustomerController {
+public abstract class AbstractAccountTransactionController extends AbstractController {
 
 //    protected AccountManager accountManager;
 //    private Prompt prompt;

@@ -1,10 +1,8 @@
 package org.academiadecodigo.javabank.controllers.customerControllers;
 
-import org.academiadecodigo.javabank.controllers.BankApplication;
-import org.academiadecodigo.javabank.views.Text;
-import org.academiadecodigo.javabank.domain.account.AccountType;
+import org.academiadecodigo.javabank.controllers.AbstractController;
 
-public class CustomerOpenAccountController extends AbstractCustomerController {
+public class OpenAccountController extends AbstractController {
 
 //    public CustomerOpenAccountController(BankApplication bankApplication) {
 //        super(bankApplication);

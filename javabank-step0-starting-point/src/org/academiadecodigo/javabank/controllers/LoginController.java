@@ -1,9 +1,8 @@
 package org.academiadecodigo.javabank.controllers;
 
-import org.academiadecodigo.javabank.controllers.customerControllers.AbstractCustomerController;
 import org.academiadecodigo.javabank.domain.Bank;
 
-public class LoginController extends AbstractCustomerController {
+public class LoginController extends AbstractController {
 
     private Controller nextController;
     private Bank bank;
