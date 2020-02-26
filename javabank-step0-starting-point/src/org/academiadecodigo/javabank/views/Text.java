@@ -7,6 +7,7 @@ public class Text {
     public final static String VIEW_LOGIN_WELCOME = "Welcome to JavaBank";
     public final static String VIEW_LOGIN_MESSAGE = "Please insert your customer ID: ";
     public final static String VIEW_MAINMENU_MESSAGE = "Please choose an option ";
+    public final static String VIEW_BALANCE_TOTAL_MESSAGE = "Total Balance: ";
     public final static String MENU_GET_BALANCE = "View Balance";
     public final static String MENU_DEPOSIT = "Make Deposit";
     public final static String MENU_WITHDRAW = "Make Withdraw";

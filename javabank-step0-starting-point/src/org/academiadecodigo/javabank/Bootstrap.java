@@ -1,13 +1,20 @@
 package org.academiadecodigo.javabank;
 
 import org.academiadecodigo.bootcamp.Prompt;
+import org.academiadecodigo.javabank.controllers.Controller;
 import org.academiadecodigo.javabank.controllers.LoginController;
 import org.academiadecodigo.javabank.controllers.MainMenuController;
+import org.academiadecodigo.javabank.controllers.customerControllers.BalanceController;
 import org.academiadecodigo.javabank.domain.Bank;
 import org.academiadecodigo.javabank.domain.Customer;
 import org.academiadecodigo.javabank.managers.AccountManager;
+import org.academiadecodigo.javabank.views.BalanceView;
 import org.academiadecodigo.javabank.views.LoginView;
 import org.academiadecodigo.javabank.views.MainMenuView;
+import org.academiadecodigo.javabank.views.UserOptions;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Bootstrap {
 
@@ -52,11 +59,19 @@ public class Bootstrap {
         mainMenuController.setView(mainMenuView);
         loginController.setNextController(mainMenuController);
 
-//        Map<Integer, Controller> controllerMap = new HashMap<>();
-//        controllerMap.put(UserOptions.GET_BALANCE.getOption(), new BalanceController(this));
+        BalanceController balanceController = new BalanceController();
+        BalanceView balanceView = new BalanceView();
+        balanceController.setView(balanceView);
+        balanceView.setBalanceController(balanceController);
+        balanceView.setBank(bank);
+
+        Map<Integer, Controller> controllerMap = new HashMap<>();
+        controllerMap.put(UserOptions.GET_BALANCE.getOption(), balanceController);
 //        controllerMap.put(UserOptions.DEPOSIT.getOption(), new DepositController(this));
 //        controllerMap.put(UserOptions.WITHDRAW.getOption(), new WithdrawController(this));
 //        controllerMap.put(UserOptions.OPEN_ACCOUNT.getOption(), new OpenAccountController(this));
+
+        mainMenuController.setControllerMap(controllerMap);
 
         return loginController;
 
