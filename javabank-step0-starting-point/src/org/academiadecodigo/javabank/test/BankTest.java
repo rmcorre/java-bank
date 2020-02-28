@@ -2,6 +2,7 @@ package org.academiadecodigo.javabank.test;
 
 import org.academiadecodigo.javabank.domain.Bank;
 import org.academiadecodigo.javabank.domain.Customer;
+import org.academiadecodigo.javabank.domain.account.Account;
 import org.academiadecodigo.javabank.domain.account.AccountType;
 import org.academiadecodigo.javabank.managers.AccountManager;
 
@@ -18,19 +19,18 @@ public class BankTest {
         }
 
         Customer c1 = new Customer(1, "Rui");
-        Customer c2 = new Customer(2, "Horacio");
+        Customer c2 = new Customer(2, "Sergio");
         bank.addCustomer(c1);
         bank.addCustomer(c2);
 
-        int a1 = c1.openAccount(AccountType.CHECKING);
-        int a2 = c1.openAccount(AccountType.SAVINGS);
-        int a3 = c2.openAccount(AccountType.CHECKING);
-        int a4 = c2.openAccount(AccountType.SAVINGS);
+        Account a1 = accountManager.openAccount(AccountType.CHECKING);
+        Account a2 = accountManager.openAccount(AccountType.CHECKING);
 
-        accountManager.deposit(a1, 10);
-        accountManager.deposit(a2, 20);
-        accountManager.deposit(a3, 30);
-        accountManager.deposit(a4, 40);
+        c1.addAccount(a1);
+        c2.addAccount(a2);
+
+        accountManager.deposit(a1.getId(), 10);
+        accountManager.deposit(a2.getId(), 20);
 
         // bank balance should equal sum of all accounts
         if (bank.getBalance() != 100) {

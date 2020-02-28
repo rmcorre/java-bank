@@ -8,30 +8,30 @@ public enum UserOptions {
     OPEN_ACCOUNT(4, Text.MENU_OPEN_ACCOUNT),
     QUIT(5, Text.MENU_QUIT);
 
-    private int option;
-    private String text;
+    private int optionId;
+    private String optionText;
 
-    UserOptions(int option, String text) {
-        this.option = option;
-        this.text = text;
+    UserOptions(int optionId, String optionText) {
+        this.optionId = optionId;
+        this.optionText = optionText;
     }
 
-    public int getOption() {
-        return option;
+    public int getOptionId() {
+        return optionId;
     }
 
-    public String getText() {
-        return text;
+    public String getOptionText() {
+        return optionText;
     }
 
-    public static String[] getMessages() {
+    public static String[] createOptionsArray() {
 
-        String[] messages = new String[values().length];
+        String[] options = new String[values().length];
 
-        for (UserOptions option : values()) {
-            messages[option.getOption() - 1] = option.getText();
+        for (UserOptions value : values()) {
+            options[value.getOptionId() - 1] = value.getOptionText();
         }
-        return messages;
+        return options;
     }
 
 }

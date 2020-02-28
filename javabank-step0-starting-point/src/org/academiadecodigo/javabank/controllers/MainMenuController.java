@@ -15,7 +15,7 @@ public class MainMenuController extends AbstractController {
 
     public void onMenuSelection(int option) {
 
-        if (option == UserOptions.QUIT.getOption()) {
+        if (option == UserOptions.QUIT.getOptionId()) {
             return;
         }
 
@@ -23,7 +23,7 @@ public class MainMenuController extends AbstractController {
             throw new IllegalStateException(Text.SYSTEM_ERROR);
         }
 
-        controllerMap.get(option).init();
-        init();
+        controllerMap.get(option).showView();
+        showView();
     }
 }

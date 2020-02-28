@@ -18,6 +18,6 @@ public class LoginController extends AbstractController {
     public void onLogin(int id) {
 
         bank.setLoginCustomer(id);
-        nextController.init();
+        nextController.showView();
     }
 }

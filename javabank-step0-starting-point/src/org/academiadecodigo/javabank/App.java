@@ -18,6 +18,6 @@ public class App {
         bank = bootstrap.generateTestData();
 
         LoginController loginController = bootstrap.wireObjects(bank);
-        loginController.init();
+        loginController.showView();
     }
 }

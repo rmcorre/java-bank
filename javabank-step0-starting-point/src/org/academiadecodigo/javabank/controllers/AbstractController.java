@@ -12,7 +12,7 @@ public abstract class AbstractController implements Controller {
     }
 
     @Override
-    public void init() {
+    public void showView() {
         view.show();
     }
 

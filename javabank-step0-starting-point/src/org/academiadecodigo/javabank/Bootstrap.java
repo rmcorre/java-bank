@@ -5,13 +5,14 @@ import org.academiadecodigo.javabank.controllers.Controller;
 import org.academiadecodigo.javabank.controllers.LoginController;
 import org.academiadecodigo.javabank.controllers.MainMenuController;
 import org.academiadecodigo.javabank.controllers.customerControllers.BalanceController;
+import org.academiadecodigo.javabank.controllers.customerControllers.NewAccountController;
+import org.academiadecodigo.javabank.controllers.customerControllers.accountTransactions.AccountTransactionController;
+import org.academiadecodigo.javabank.controllers.customerControllers.accountTransactions.DepositController;
+import org.academiadecodigo.javabank.controllers.customerControllers.accountTransactions.WithdrawController;
 import org.academiadecodigo.javabank.domain.Bank;
 import org.academiadecodigo.javabank.domain.Customer;
 import org.academiadecodigo.javabank.managers.AccountManager;
-import org.academiadecodigo.javabank.views.BalanceView;
-import org.academiadecodigo.javabank.views.LoginView;
-import org.academiadecodigo.javabank.views.MainMenuView;
-import org.academiadecodigo.javabank.views.UserOptions;
+import org.academiadecodigo.javabank.views.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -65,11 +66,33 @@ public class Bootstrap {
         balanceView.setBalanceController(balanceController);
         balanceView.setBank(bank);
 
+        NewAccountController newAccountController = new NewAccountController();
+        NewAccountView newAccountView = new NewAccountView();
+        newAccountController.setView(newAccountView);
+        newAccountView.setNewAccountController(newAccountController);
+        newAccountController.setBank(bank);
+
+        DepositController depositController = new DepositController();
+        AccountTransactionView depositView = new AccountTransactionView();
+        depositController.setView(depositView);
+        depositView.setTransactionController(depositController);
+        depositController.setBank(bank);
+        depositView.setBank(bank);
+        depositView.setPrompt(prompt);
+
+        WithdrawController withdrawController = new WithdrawController();
+        AccountTransactionView withdrawView = new AccountTransactionView();
+        withdrawController.setView(withdrawView);
+        withdrawView.setTransactionController(withdrawController);
+        withdrawController.setBank(bank);
+        withdrawView.setBank(bank);
+        withdrawView.setPrompt(prompt);
+
         Map<Integer, Controller> controllerMap = new HashMap<>();
-        controllerMap.put(UserOptions.GET_BALANCE.getOption(), balanceController);
-//        controllerMap.put(UserOptions.DEPOSIT.getOption(), new DepositController(this));
-//        controllerMap.put(UserOptions.WITHDRAW.getOption(), new WithdrawController(this));
-//        controllerMap.put(UserOptions.OPEN_ACCOUNT.getOption(), new OpenAccountController(this));
+        controllerMap.put(UserOptions.GET_BALANCE.getOptionId(), balanceController);
+        controllerMap.put(UserOptions.DEPOSIT.getOptionId(), depositController);
+        controllerMap.put(UserOptions.WITHDRAW.getOptionId(), withdrawController);
+        controllerMap.put(UserOptions.OPEN_ACCOUNT.getOptionId(), newAccountController);
 
         mainMenuController.setControllerMap(controllerMap);
 

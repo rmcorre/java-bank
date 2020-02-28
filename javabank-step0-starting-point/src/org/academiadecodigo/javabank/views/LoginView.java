@@ -25,10 +25,10 @@ public class LoginView extends AbstractView {
 
     private void showLoginPrompt() {
 
-        IntegerSetInputScanner scanAccessingCustomerId = new IntegerSetInputScanner(bank.getCustomerIds());
-        scanAccessingCustomerId.setMessage(Text.VIEW_LOGIN_MESSAGE);
-        scanAccessingCustomerId.setError(Text.VIEW_LOGIN_ERROR);
+        IntegerSetInputScanner customerIds = new IntegerSetInputScanner(bank.getCustomerIds());
+        customerIds.setMessage(Text.VIEW_LOGIN_MESSAGE);
+        customerIds.setError(Text.VIEW_LOGIN_ERROR);
 
-        loginController.onLogin(prompt.getUserInput(scanAccessingCustomerId));
+        loginController.onLogin(prompt.getUserInput(customerIds));
     }
 }

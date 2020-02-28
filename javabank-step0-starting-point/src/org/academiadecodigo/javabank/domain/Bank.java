@@ -42,15 +42,9 @@ public class Bank {
         return customers.keySet();
     }
 
-    /**
-     * Adds a new customer to the bank
-     *
-     * @param customer the new bank customer
-     * @see Customer#setAccountManager(AccountManager)
-     */
+
     public void addCustomer(Customer customer) {
         customers.put(customer.getId(), customer);
-        customer.setAccountManager(accountManager);
     }
 
     /**

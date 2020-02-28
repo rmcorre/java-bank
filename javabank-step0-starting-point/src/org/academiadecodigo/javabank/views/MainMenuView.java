@@ -18,7 +18,7 @@ public class MainMenuView extends AbstractView {
     }
 
     private void showMainMenuPrompt() {
-        MenuInputScanner mainMenu = new MenuInputScanner(UserOptions.getMessages());
+        MenuInputScanner mainMenu = new MenuInputScanner(UserOptions.createOptionsArray());
         mainMenu.setMessage("\n" + Text.VIEW_MAINMENU_MESSAGE + bank.getLoginCustomer().getName());
         mainMenu.setError(Text.VIEW_MAINMENU_INVALID_OPTION);
         mainMenuController.onMenuSelection(prompt.getUserInput(mainMenu));
