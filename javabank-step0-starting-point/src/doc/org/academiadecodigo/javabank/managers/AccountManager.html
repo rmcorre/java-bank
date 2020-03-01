@@ -183,14 +183,14 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deposit(int,double)">deposit</a></span>&#8203;(int&nbsp;id,
        double&nbsp;amount)</code></th>
 <td class="colLast">
-<div class="block">Perform an <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.domain.account"><code>Account</code></a> deposit if possible</div>
+<div class="block">Perform an <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.model.account"><code>Account</code></a> deposit if possible</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.domain.account">Account</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#openAccount(org.academiadecodigo.javabank.domain.account.AccountType)">openAccount</a></span>&#8203;(<a href="../domain/account/AccountType.html" title="enum in org.academiadecodigo.javabank.domain.account">AccountType</a>&nbsp;accountType)</code></th>
+<td class="colFirst"><code><a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.model.account">Account</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#openAccount(org.academiadecodigo.javabank.domain.account.AccountType)">openAccount</a></span>&#8203;(<a href="../domain/account/AccountType.html" title="enum in org.academiadecodigo.javabank.model.account">AccountType</a>&nbsp;accountType)</code></th>
 <td class="colLast">
-<div class="block">Creates a new <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.domain.account"><code>Account</code></a></div>
+<div class="block">Creates a new <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.model.account"><code>Account</code></a></div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -199,7 +199,7 @@ extends java.lang.Object</pre>
         int&nbsp;dstId,
         double&nbsp;amount)</code></th>
 <td class="colLast">
-<div class="block">Performs a transfer between two <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.domain.account"><code>Account</code></a> if possible</div>
+<div class="block">Performs a transfer between two <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.model.account"><code>Account</code></a> if possible</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -207,7 +207,7 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withdraw(int,double)">withdraw</a></span>&#8203;(int&nbsp;id,
         double&nbsp;amount)</code></th>
 <td class="colLast">
-<div class="block">Perform an <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.domain.account"><code>Account</code></a> withdrawal if possible</div>
+<div class="block">Perform an <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.model.account"><code>Account</code></a> withdrawal if possible</div>
 </td>
 </tr>
 </table>
@@ -260,8 +260,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>openAccount</h4>
-<pre class="methodSignature">public&nbsp;<a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.domain.account">Account</a>&nbsp;openAccount&#8203;(<a href="../domain/account/AccountType.html" title="enum in org.academiadecodigo.javabank.domain.account">AccountType</a>&nbsp;accountType)</pre>
-<div class="block">Creates a new <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.domain.account"><code>Account</code></a></div>
+<pre class="methodSignature">public&nbsp;<a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.model.account">Account</a>&nbsp;openAccount&#8203;(<a href="../domain/account/AccountType.html" title="enum in org.academiadecodigo.javabank.model.account">AccountType</a>&nbsp;accountType)</pre>
+<div class="block">Creates a new <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.model.account"><code>Account</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>accountType</code> - the account type</dd>
@@ -278,7 +278,7 @@ extends java.lang.Object</pre>
 <h4>deposit</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;deposit&#8203;(int&nbsp;id,
                     double&nbsp;amount)</pre>
-<div class="block">Perform an <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.domain.account"><code>Account</code></a> deposit if possible</div>
+<div class="block">Perform an <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.model.account"><code>Account</code></a> deposit if possible</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>id</code> - the id of the account</dd>
@@ -294,7 +294,7 @@ extends java.lang.Object</pre>
 <h4>withdraw</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;withdraw&#8203;(int&nbsp;id,
                      double&nbsp;amount)</pre>
-<div class="block">Perform an <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.domain.account"><code>Account</code></a> withdrawal if possible</div>
+<div class="block">Perform an <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.model.account"><code>Account</code></a> withdrawal if possible</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>id</code> - the id of the account</dd>
@@ -311,7 +311,7 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;transfer&#8203;(int&nbsp;srcId,
                      int&nbsp;dstId,
                      double&nbsp;amount)</pre>
-<div class="block">Performs a transfer between two <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.domain.account"><code>Account</code></a> if possible</div>
+<div class="block">Performs a transfer between two <a href="../domain/account/Account.html" title="class in org.academiadecodigo.javabank.model.account"><code>Account</code></a> if possible</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>srcId</code> - the source account id</dd>

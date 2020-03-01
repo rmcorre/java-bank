@@ -1,7 +1,5 @@
 package org.academiadecodigo.javabank.controllers;
 
-import org.academiadecodigo.javabank.domain.Bank;
-
 public class LoginController extends AbstractController {
 
     private Controller nextController;

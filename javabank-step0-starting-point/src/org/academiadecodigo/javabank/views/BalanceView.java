@@ -1,8 +1,8 @@
 package org.academiadecodigo.javabank.views;
 
 import org.academiadecodigo.javabank.controllers.customerControllers.BalanceController;
-import org.academiadecodigo.javabank.domain.Customer;
-import org.academiadecodigo.javabank.domain.account.Account;
+import org.academiadecodigo.javabank.model.Customer;
+import org.academiadecodigo.javabank.model.account.Account;
 
 import java.text.DecimalFormat;
 import java.util.Set;

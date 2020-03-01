@@ -1,7 +1,7 @@
 package org.academiadecodigo.javabank.test;
 
-import org.academiadecodigo.javabank.domain.account.AbstractAccount;
-import org.academiadecodigo.javabank.domain.account.CheckingAccount;
+import org.academiadecodigo.javabank.model.account.AbstractAccount;
+import org.academiadecodigo.javabank.model.account.CheckingAccount;
 
 public class CheckingAccountTest {
 

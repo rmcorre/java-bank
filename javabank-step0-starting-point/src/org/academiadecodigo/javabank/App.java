@@ -1,11 +1,9 @@
 package org.academiadecodigo.javabank;
 
-import org.academiadecodigo.javabank.controllers.LoginController;
-import org.academiadecodigo.javabank.domain.Bank;
+import org.academiadecodigo.javabank.controllers.Controller;
+import org.academiadecodigo.javabank.services.CustomerServiceImpl;
 
 public class App {
-
-    private Bank bank;
 
     public static void main(String[] args) {
 
@@ -15,9 +13,10 @@ public class App {
 
     private void bootstrap() {
         Bootstrap bootstrap = new Bootstrap();
-        bank = bootstrap.generateTestData();
+        bootstrap.setCustomerService(new CustomerServiceImpl());
+        bootstrap.loadCustomers();
 
-        LoginController loginController = bootstrap.wireObjects(bank);
+        Controller loginController = bootstrap.wireObjects();
         loginController.showView();
     }
 }

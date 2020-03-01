@@ -6,12 +6,10 @@ import org.academiadecodigo.javabank.controllers.LoginController;
 import org.academiadecodigo.javabank.controllers.MainMenuController;
 import org.academiadecodigo.javabank.controllers.customerControllers.BalanceController;
 import org.academiadecodigo.javabank.controllers.customerControllers.NewAccountController;
-import org.academiadecodigo.javabank.controllers.customerControllers.accountTransactions.AccountTransactionController;
 import org.academiadecodigo.javabank.controllers.customerControllers.accountTransactions.DepositController;
 import org.academiadecodigo.javabank.controllers.customerControllers.accountTransactions.WithdrawController;
-import org.academiadecodigo.javabank.domain.Bank;
-import org.academiadecodigo.javabank.domain.Customer;
-import org.academiadecodigo.javabank.managers.AccountManager;
+import org.academiadecodigo.javabank.model.Customer;
+import org.academiadecodigo.javabank.services.CustomerServiceImpl;
 import org.academiadecodigo.javabank.views.*;
 
 import java.util.HashMap;
@@ -19,73 +17,65 @@ import java.util.Map;
 
 public class Bootstrap {
 
-    public Bank generateTestData() {
+    private CustomerServiceImpl customerService;
 
-        Bank bank = new Bank();
-        AccountManager accountManager = new AccountManager();
-        bank.setAccountManager(accountManager);
-
-        Customer c1 = new Customer(1, "Rui");
-        Customer c2 = new Customer(2, "Sergio");
-        Customer c3 = new Customer(3, "Bruno");
-
-        bank.addCustomer(c1);
-        bank.addCustomer(c2);
-        bank.addCustomer(c3);
-
-        return bank;
+    public void setCustomerService(CustomerServiceImpl customerService) {
+        this.customerService = customerService;
     }
 
-    public LoginController wireObjects(Bank bank) {
+    public void loadCustomers() {
+
+        Customer c1 = new Customer();
+        Customer c2 = new Customer();
+        Customer c3 = new Customer();
+        c1.setName("Rui");
+        c2.setName("Sergio");
+        c3.setName("Bruno");
+
+
+        customerService.add(c1);
+        customerService.add(c2);
+        customerService.add(c3);
+    }
+
+    public Controller wireObjects() {
 
         Prompt prompt = new Prompt(System.in, System.out);
 
         LoginController loginController = new LoginController();
         LoginView loginView = new LoginView();
-
-        loginController.setBank(bank);
         loginController.setView(loginView);
-
-        loginView.setBank(bank);
-        loginView.setPrompt(prompt);
         loginView.setLoginController(loginController);
+        loginView.setPrompt(prompt);
+
 
         MainMenuController mainMenuController = new MainMenuController();
         MainMenuView mainMenuView = new MainMenuView();
-
-        mainMenuView.setBank(bank);
-        mainMenuView.setPrompt(prompt);
-        mainMenuView.setMainMenuController(mainMenuController);
-
         mainMenuController.setView(mainMenuView);
+        mainMenuView.setMainMenuController(mainMenuController);
+        mainMenuView.setPrompt(prompt);
         loginController.setNextController(mainMenuController);
 
         BalanceController balanceController = new BalanceController();
         BalanceView balanceView = new BalanceView();
         balanceController.setView(balanceView);
         balanceView.setBalanceController(balanceController);
-        balanceView.setBank(bank);
 
         NewAccountController newAccountController = new NewAccountController();
         NewAccountView newAccountView = new NewAccountView();
         newAccountController.setView(newAccountView);
         newAccountView.setNewAccountController(newAccountController);
-        newAccountController.setBank(bank);
 
         DepositController depositController = new DepositController();
         AccountTransactionView depositView = new AccountTransactionView();
         depositController.setView(depositView);
         depositView.setTransactionController(depositController);
-        depositController.setBank(bank);
-        depositView.setBank(bank);
         depositView.setPrompt(prompt);
 
         WithdrawController withdrawController = new WithdrawController();
         AccountTransactionView withdrawView = new AccountTransactionView();
         withdrawController.setView(withdrawView);
         withdrawView.setTransactionController(withdrawController);
-        withdrawController.setBank(bank);
-        withdrawView.setBank(bank);
         withdrawView.setPrompt(prompt);
 
         Map<Integer, Controller> controllerMap = new HashMap<>();

@@ -1,7 +1,6 @@
 package org.academiadecodigo.javabank.views;
 
 import org.academiadecodigo.bootcamp.Prompt;
-import org.academiadecodigo.javabank.domain.Bank;
 
 public abstract class AbstractView implements View {
 
