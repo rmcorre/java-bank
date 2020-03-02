@@ -14,6 +14,16 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public void add(Customer customer) {
+
+        if (customer.getId() == null) {
+            customer.setId(getNextId());
+        }
+
+        customerMap.put(customer.getId(), customer);
+    }
+
+    @Override
     public Customer getCustomer(Integer id) {
         return customerMap.get(id);
     }
@@ -48,15 +58,5 @@ public class CustomerServiceImpl implements CustomerService {
         }
 
         return balance;
-    }
-
-    @Override
-    public void add(Customer customer) {
-
-        if (customer.getId() == null) {
-            customer.setId(getNextId());
-        }
-
-        customerMap.put(customer.getId(), customer);
     }
 }
