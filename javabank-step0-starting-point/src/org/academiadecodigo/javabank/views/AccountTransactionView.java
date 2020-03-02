@@ -2,9 +2,8 @@ package org.academiadecodigo.javabank.views;
 
 import org.academiadecodigo.bootcamp.scanners.integer.IntegerSetInputScanner;
 import org.academiadecodigo.bootcamp.scanners.precisiondouble.DoubleInputScanner;
-import org.academiadecodigo.javabank.controllers.customerControllers.accountTransactions.AccountTransactionController;
+import org.academiadecodigo.javabank.controllers.accountTransactions.AccountTransactionController;
 
-import java.sql.SQLOutput;
 
 public class AccountTransactionView extends AbstractView {
 
@@ -17,7 +16,7 @@ public class AccountTransactionView extends AbstractView {
     @Override
     public void show() {
 
-        if (bank.getLoginCustomer().getAccountIds().size() == 0) {
+        if (transactionController.getAccountIds().size() == 0) {
             showNoAccountsError();
         }
 
@@ -38,7 +37,7 @@ public class AccountTransactionView extends AbstractView {
 
         StringBuilder builder = new StringBuilder();
 
-        for (Integer id : bank.getLoginCustomer().getAccountIds()) {
+        for (Integer id : transactionController.getAccountIds()) {
             builder.append(id);
             builder.append(" ");
         }
@@ -48,7 +47,7 @@ public class AccountTransactionView extends AbstractView {
 
     protected int scanAccount() {
 
-        IntegerSetInputScanner scanner = new IntegerSetInputScanner(bank.getLoginCustomer().getAccountIds());
+        IntegerSetInputScanner scanner = new IntegerSetInputScanner(transactionController.getAccountIds());
         scanner.setMessage(Text.VIEW_ACCOUNT_TRANSACTION_CHOOSE_ACCOUNT);
         scanner.setError(Text.VIEW_ACCOUNT_TRANSACTION_INVALID_ACCOUNT_ERROR);
 

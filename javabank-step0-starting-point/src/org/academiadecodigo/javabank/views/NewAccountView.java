@@ -1,6 +1,6 @@
 package org.academiadecodigo.javabank.views;
 
-import org.academiadecodigo.javabank.controllers.customerControllers.NewAccountController;
+import org.academiadecodigo.javabank.controllers.NewAccountController;
 
 public class NewAccountView extends AbstractView {
 
@@ -12,6 +12,6 @@ public class NewAccountView extends AbstractView {
 
     @Override
     public void show() {
-        System.out.println("\n" + Text.VIEW_NEW_ACCOUNT_MESSAGE);
+        System.out.println("\n" + Text.VIEW_NEW_ACCOUNT_MESSAGE + newAccountController.getNewAccountId());
     }
 }

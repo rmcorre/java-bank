@@ -13,6 +13,10 @@ public class MainMenuController extends AbstractController {
         this.controllerMap = controllerMap;
     }
 
+    public String getCustomerName() {
+        return authService.getAccessingCustomer().getName();
+    }
+
     public void onMenuSelection(int option) {
 
         if (option == UserOptions.QUIT.getOptionId()) {

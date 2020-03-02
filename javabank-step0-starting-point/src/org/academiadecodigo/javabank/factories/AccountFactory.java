@@ -7,22 +7,16 @@ import org.academiadecodigo.javabank.model.account.SavingsAccount;
 
 public class AccountFactory {
 
-    private int nextAccountId = 1;
-
-    private int getNextAccountId() {
-        return nextAccountId++;
-    }
-
     public Account createAccount(AccountType accountType) {
 
         Account newAccount;
 
         switch (accountType) {
             case CHECKING:
-                newAccount = new CheckingAccount(getNextAccountId());
+                newAccount = new CheckingAccount();
                 break;
             case SAVINGS:
-                newAccount = new SavingsAccount(getNextAccountId());
+                newAccount = new SavingsAccount();
                 break;
             default:
                 newAccount = null;

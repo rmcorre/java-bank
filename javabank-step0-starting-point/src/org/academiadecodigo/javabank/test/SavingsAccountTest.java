@@ -7,7 +7,7 @@ public class SavingsAccountTest {
 
     public boolean test() {
 
-        AbstractAccount account = new SavingsAccount(1);
+        AbstractAccount account = new SavingsAccount();
 
         // account should start with zero money
         if (account.getBalance() != 0) {
