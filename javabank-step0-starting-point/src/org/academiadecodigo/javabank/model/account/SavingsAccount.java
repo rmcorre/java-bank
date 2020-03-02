@@ -14,16 +14,7 @@ public class SavingsAccount extends AbstractAccount {
     private static final double MIN_BALANCE = 100;
 
     /**
-     * Creates a new {@code SavingsAccount} instance
-     *
-     * @see AbstractAccount#AbstractAccount(int)
-     */
-    public SavingsAccount(int id) {
-        super(id);
-    }
-
-    /**
-     * @see AbstractAccount#getAccountType()
+     * @see Account#getAccountType()
      */
     @Override
     public AccountType getAccountType() {

@@ -1,30 +1,13 @@
 package org.academiadecodigo.javabank.model.account;
 
+import org.academiadecodigo.javabank.model.AbstractModel;
+
 /**
  * A generic account domain entity to be used as a base for concrete types of accounts
  */
-public abstract class AbstractAccount implements Account{
+public abstract class AbstractAccount extends AbstractModel implements Account{
 
-    private int id;
     private double balance = 0;
-
-    /**
-     * Initializes a new {@code Account} instance with an id
-     *
-     * @param id the account id
-     */
-    public AbstractAccount(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets the account id
-     *
-     * @return the account id
-     */
-    public int getId() {
-        return id;
-    }
 
     /**
      * Gets the account balance
