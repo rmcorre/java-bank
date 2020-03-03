@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.academiadecodigo.javabank.domain"},{"l":"org.academiadecodigo.javabank.domain.account"},{"l":"org.academiadecodigo.javabank.managers"},{"l":"org.academiadecodigo.javabank.test"}]

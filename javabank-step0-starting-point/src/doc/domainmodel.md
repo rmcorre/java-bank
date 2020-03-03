@@ -1,5 +1,0 @@
-A domain model is a visual representation of real situation objects in a domain. A domain is an area of concern. Its used to refer to the area you are dealing with. The model is a diagram, for domain models the class diagram UML is mostly used. The class diagram is only used for the notation. The term domain model does not mean a set of diagrams describing software classes.
-
-So for example imagine a store. For that store you want to build a brand new Point Of Sale system (lets call it POS system). A POS system is a computerized application used to record sale and handle payments. So you focus on the domain of the POS system. Now you will conceptualize the objects that will be used for this system. So you will get objects like: Sale, Payment, Register, Item etc. In a domain model you model these objects and draw associations between them so that you have an high level idea how this system will work. An example of the POS domain model will be like this:
-
-![](https://i.stack.imgur.com/WkUGA.jpg)
